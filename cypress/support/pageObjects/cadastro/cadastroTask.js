@@ -12,7 +12,7 @@ const cadastraUsuario = () => {
     cy.get(cadastroPage.file).selectFile('cnh.jpg', {
       action: 'drag-drop',
       force: true
-    })
+    });
 
     cy.get(cadastroPage.botao_sucesso).click();
     cy.get(cadastroPage.mensagem_sucesso);
