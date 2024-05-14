@@ -25,5 +25,26 @@ const entraPaginaCadastro = () => {
   cy.location('pathname').should('eq','/deliver');
 }
 
+const validaCampos= () => {
+  cy.get(cadastroPage.botao_sucesso).click();
 
-module.exports = {cadastraUsuario, entraPaginaCadastro};
+  cy.get(cadastroPage.erro_nome);
+  cy.get(cadastroPage.erro_cpf);
+  cy.get(cadastroPage.erro_email);
+  cy.get(cadastroPage.erro_cep);
+  cy.get(cadastroPage.erro_endereco);
+  cy.get(cadastroPage.erro_entrega);
+  cy.get(cadastroPage.erro_img);
+
+  cy.get(cadastroPage.whats).type('9');
+  cy.get(cadastroPage.botao_sucesso).click();
+
+  cy.get(cadastroPage.erro_whats);
+
+  cy.get(cadastroPage.cpf).type('9');
+  cy.get(cadastroPage.botao_sucesso).click();
+  cy.get(cadastroPage.erro_cpf_invalido);
+}
+
+
+module.exports = {cadastraUsuario, entraPaginaCadastro, validaCampos};
