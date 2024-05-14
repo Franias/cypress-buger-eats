@@ -1,21 +1,14 @@
-import cadastroTask from '../support/pageObjects/cadastro/cadastroTask.js';
+const {cadastraUsuario, entraPaginaCadastro} = require ('../support/pageObjects/cadastro/cadastroTask.js');
 
 describe('Jornada de Usuário', () => {
   beforeEach(()=> {
     cy.visit('/')
+    entraPaginaCadastro();
   });
   it('Deve permitir que a pessoa usuária acesse a aplicação e realize um cadastro', () => {
-    cy.get('a').click();
-
-    cy.location('pathname').should('eq','/deliver');
-
-    cadastroTask.cadastraUsuario();
+    cadastraUsuario();
   });
   it('Não deve permitir que a pessoa usuária realize um cadastro', () => {
-    cy.get('a').click();
-
-    cy.location('pathname').should('eq','/deliver');
-
     cy.get('.button-success').click();
 
     cy.get('span:contains("É necessário informar o nome")');

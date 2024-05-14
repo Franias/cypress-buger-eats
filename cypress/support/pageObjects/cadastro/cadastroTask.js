@@ -1,6 +1,7 @@
-import cadastroPage from '../cadastro/cadastroPage.js';
+const cadastroPage = require ('../cadastro/cadastroPage.js');
 
-export const cadastraUsuario = () => {
+
+const cadastraUsuario = () => {
     cy.get(cadastroPage.nome).type('Test');
     cy.get(cadastroPage.cpf).type('67726385065');
     cy.get(cadastroPage.email).type('test@test.com');
@@ -17,3 +18,12 @@ export const cadastraUsuario = () => {
     cy.get(cadastroPage.mensagem_sucesso);
 
 }
+
+const entraPaginaCadastro = () => {
+  cy.get('a').click();
+
+  cy.location('pathname').should('eq','/deliver');
+}
+
+
+module.exports = {cadastraUsuario, entraPaginaCadastro};
