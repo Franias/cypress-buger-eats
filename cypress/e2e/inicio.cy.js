@@ -1,4 +1,4 @@
-const {cadastraUsuario, entraPaginaCadastro, validaCampos} = require ('../support/pageObjects/cadastro/cadastroTask.js');
+import {cadastraUsuario, entraPaginaCadastro, validaCampos} from '../support/pageObjects/cadastro/cadastroTask.js';
 
 describe('Jornada de Usuário', () => {
   beforeEach(()=> {

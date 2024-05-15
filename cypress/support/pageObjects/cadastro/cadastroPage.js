@@ -1,4 +1,4 @@
-const elements = {
+export const cadastroPage = {
     nome: 'input[name="name"]',
     cpf: 'input[name="cpf"]',
     email: 'input[name="email"]',
@@ -19,4 +19,3 @@ const elements = {
     erro_whats: 'span:contains("Oops! Whatsapp com formato incorreto")',
     erro_cpf_invalido: 'span:contains("Oops! CPF inválido")'
 };
-module.exports = elements;

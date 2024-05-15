@@ -1,7 +1,6 @@
-const cadastroPage = require ('../cadastro/cadastroPage.js');
+import { cadastroPage } from '../cadastro/cadastroPage.js';
 
-
-const cadastraUsuario = () => {
+export const cadastraUsuario = () => {
     cy.get(cadastroPage.nome).type('Test');
     cy.get(cadastroPage.cpf).type('67726385065');
     cy.get(cadastroPage.email).type('test@test.com');
@@ -19,13 +18,13 @@ const cadastraUsuario = () => {
 
 }
 
-const entraPaginaCadastro = () => {
+export const entraPaginaCadastro = () => {
   cy.get('a').click();
 
   cy.location('pathname').should('eq','/deliver');
 }
 
-const validaCampos= () => {
+export const validaCampos= () => {
   cy.get(cadastroPage.botao_sucesso).click();
 
   cy.get(cadastroPage.erro_nome);
@@ -45,6 +44,3 @@ const validaCampos= () => {
   cy.get(cadastroPage.botao_sucesso).click();
   cy.get(cadastroPage.erro_cpf_invalido);
 }
-
-
-module.exports = {cadastraUsuario, entraPaginaCadastro, validaCampos};
