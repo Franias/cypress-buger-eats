@@ -7,8 +7,11 @@ describe('Jornada de Usuário', () => {
   });
   it('Deve permitir que a pessoa usuária acesse a aplicação e realize um cadastro', () => {
     cadastraUsuario();
+    cy.screenshot();
   });
   it('Não deve permitir que a pessoa usuária realize um cadastro', () => {
     validaCampos();
+    cy.screenshot();
   });
+  
 })
