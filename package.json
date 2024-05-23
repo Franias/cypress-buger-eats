@@ -5,11 +5,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "report:allure": "npx allure serve allure-results"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "allure-cypress": "^2.15.1",
     "cypress": "^13.9.0"
+  },
+  "dependencies": {
+    "allure-commandline": "^2.29.0"
   }
 }
